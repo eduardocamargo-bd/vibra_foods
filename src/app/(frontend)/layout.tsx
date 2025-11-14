@@ -12,6 +12,10 @@ import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
+import CookieBanner from '@/components/CookieBanner'
+import CookieModal from '@/components/CookieModal'
+// import CookieDebugger from '@/components/CookieDebugger'
+import { AnalyticsProvider } from '@/components/Analytics'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -37,6 +41,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Header />
           {children}
           <Footer />
+          
+          {/* Cookie Management & Analytics */}
+          <CookieBanner />
+          <CookieModal />
+          {/* <CookieDebugger /> */}
+          
+          {/* Analytics - carregados apenas após consentimento */}
+          <AnalyticsProvider />
         </Providers>
       </body>
     </html>
