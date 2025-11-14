@@ -101,3 +101,60 @@ html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
 }
+
+/* === VIBRA FOODS DESIGN TOKENS === */
+:root {
+  /* Cores Vibra Foods - usando prefixo vf para evitar conflitos */
+  --vf-primary: #004349;
+  --vf-primary-light: #2dd1a9;
+  --vf-primary-dark: #003e1d;
+  
+  --vf-secondary: #c7eb2e;
+  --vf-secondary-light: #dff68c;
+  --vf-secondary-dark: #95c11f;
+  
+  --vf-accent: #2dd1a9;
+  --vf-accent-blue: #24357c;
+  --vf-accent-orange: #f97316;
+  
+  /* Cores neutras */
+  --vf-white: #ffffff;
+  --vf-off-white: #fffff4;
+  --vf-light-gray: #fffffa;
+  --vf-gray: #646b6a;
+  --vf-border: #86a7aa;
+  --vf-dark-gray: #003e1d;
+  --vf-black: #000000;
+  
+  /* Tipografia Vibra Foods */
+  --vf-font-primary: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vf-font-secondary: 'Ubuntu Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vf-font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Tamanhos de fonte */
+  --vf-text-xs: 13px;
+  --vf-text-sm: 14px;
+  --vf-text-base: 16px;
+  --vf-text-lg: 18px;
+  --vf-text-xl: 20px;
+  --vf-text-2xl: 24px;
+  --vf-text-3xl: 32px;
+  --vf-text-4xl: 40px;
+  --vf-text-5xl: 48px;
+  --vf-text-6xl: 64px;
+  --vf-text-7xl: 80px;
+  --vf-text-8xl: 100px;
+  
+  /* Espaçamentos */
+  --vf-space-1: 4px;
+  --vf-space-2: 8px;
+  --vf-space-3: 12px;
+  --vf-space-4: 16px;
+  --vf-space-5: 20px;
+  --vf-space-6: 24px;
+  --vf-space-8: 32px;
+  --vf-space-10: 40px;
+  --vf-space-12: 48px;
+  --vf-space-16: 64px;
+  --vf-space-20: 80px;
+}
