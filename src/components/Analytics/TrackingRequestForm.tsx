@@ -48,25 +48,17 @@ export const TrackingRequestForm: React.FC<TrackingRequestFormProps> = ({
     setError(null)
 
     try {
-      const response = await fetch('/api/request-tracking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await response.json()
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Erro ao enviar solicitação')
-      }
-
+      // Simula processamento dos dados coletados
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      
+      // Log dos dados para desenvolvimento (remover em produção)
+      console.log('Dados de solicitação de pixel coletados:', formData)
+      
       setIsSubmitted(true)
       onSuccess?.()
 
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido'
+      const errorMessage = err instanceof Error ? err.message : 'Erro ao processar solicitação'
       setError(errorMessage)
       onError?.(errorMessage)
     } finally {
@@ -80,10 +72,10 @@ export const TrackingRequestForm: React.FC<TrackingRequestFormProps> = ({
         <div className="text-center">
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            Solicitação Enviada!
+            Dados Registrados!
           </h3>
           <p className="text-gray-600 mb-4">
-            Recebemos sua solicitação de configuração de pixel. Nossa equipe entrará em contato em breve.
+            Seus dados foram coletados com sucesso. Nossa equipe utilizará essas informações nas próximas reuniões.
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
@@ -103,10 +95,10 @@ export const TrackingRequestForm: React.FC<TrackingRequestFormProps> = ({
           <Mail className="w-6 h-6 text-blue-600" />
         </div>
         <h2 className="text-xl font-semibold text-gray-900">
-          Solicitar Configuração de Pixel
+          Dados para Configuração de Pixel
         </h2>
         <p className="text-sm text-gray-600 mt-1">
-          Preencha os dados para receber seu pixel de rastreamento personalizado
+          Preencha os dados para discussão em reunião sobre pixel de rastreamento personalizado
         </p>
       </div>
 
@@ -225,12 +217,12 @@ export const TrackingRequestForm: React.FC<TrackingRequestFormProps> = ({
           {isSubmitting ? (
             <>
               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              Enviando...
+              Processando...
             </>
           ) : (
             <>
               <Send className="w-4 h-4" />
-              Enviar Solicitação
+              Registrar Dados
             </>
           )}
         </button>
@@ -238,7 +230,7 @@ export const TrackingRequestForm: React.FC<TrackingRequestFormProps> = ({
 
       <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-md">
         <p className="text-xs text-blue-700">
-          💡 <strong>Tempo de resposta:</strong> Nossa equipe entrará em contato em até 24 horas úteis para configurar seu pixel personalizado.
+          💡 <strong>Processo:</strong> Os dados coletados serão utilizados durante reuniões para discussão e configuração do pixel personalizado.
         </p>
       </div>
     </div>

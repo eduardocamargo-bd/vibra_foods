@@ -217,8 +217,8 @@ export const useCookieConsent = () => {
       document.head.appendChild(script)
 
       // Initialize GA4
-      ;(window as any).gtag = (window as any).gtag || function() { 
-        (((window as any).gtag).q = ((window as any).gtag).q || []).push(arguments) 
+      ;(window as any).gtag = (window as any).gtag || function(...args: any[]) { 
+        (((window as any).gtag).q = ((window as any).gtag).q || []).push(args) 
       }
       ;(window as any).gtag('js', new Date())
       ;(window as any).gtag('config', 'GA_MEASUREMENT_ID')

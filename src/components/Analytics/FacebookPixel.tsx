@@ -36,11 +36,11 @@ export const FacebookPixel: React.FC<FacebookPixelProps> = ({
       
       if (f.fbq) return
       
-      let n: any = f.fbq = function() {
+      const n: any = f.fbq = function(...args: any[]) {
         if (n && n.callMethod) {
-          n.callMethod.apply(n, arguments)
+          n.callMethod(...args)
         } else if (n && n.queue) {
-          n.queue.push(arguments)
+          n.queue.push(args)
         }
       }
       

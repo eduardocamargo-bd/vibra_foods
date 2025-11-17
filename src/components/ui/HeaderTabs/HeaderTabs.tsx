@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Globe, ChevronDown } from 'lucide-react'
-import styles from './HeaderTabs.module.css'
 
 interface HeaderTabsProps {
   className?: string
@@ -10,40 +9,40 @@ interface HeaderTabsProps {
 
 const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
   return (
-    <div className={`${styles['c_header-tabs-instance1']} ${className || ''}`}>
-      <div className={styles['c_header-tabs-frame1']}>
-        <div className={styles['c_header-tabs-frame2']}>
-          <div className={styles['c_header-tabs-text10']}>
-            <span className={styles['c_header-tabs-text11']}>Vibra Foods</span>
+    <div className={`w-full max-h-11 md:max-h-14 gap-8 md:gap-4 pr-8 md:pr-4 flex items-center justify-between overflow-hidden bg-[var(--vf-secondary)] ${className || ''}`}>
+      <div className="max-w-[24.8125rem] flex items-center justify-start">
+        <div className=" w-full h-full whitespace-nowrap min-w-[7.875rem] h-full gap-2 md:py-3 md:px-4 flex items-center justify-center overflow-hidden rounded-tr-[16px] bg-[var(--vf-white)]">
+          <div className="w-full text-center">
+            <span className="text-[var(--vf-primary)] lg:text-[14px] md:text-xs font-ubuntu font-semibold leading-none">Vibra Foods</span>
           </div>
         </div>
-        <div className={styles['c_header-tabs-instance2']}>
-          <div className={styles['c_header-tabs-text12']}>
-            <span className={styles['c_header-tabs-text13']}>Nat</span>
+        <div className="max-w-[4.5rem] md:max-w-none w-full h-full py-4 px-6 md:py-3 md:px-4 flex items-center justify-center overflow-hidden hover:bg-white/30 transition-colors duration-200 cursor-pointer">
+          <div className="w-full text-left">
+            <span className="text-[var(--vf-primary)] lg:text-[14px] md:text-xs font-ubuntu font-semibold leading-none">Nat</span>
           </div>
         </div>
-        <div className={styles['c_header-tabs-instance3']}>
-          <div className={styles['c_header-tabs-text14']}>
-            <span className={styles['c_header-tabs-text15']}>Ávia</span>
+        <div className="max-w-[4.75rem] md:max-w-none w-full h-full py-4 px-6 md:py-3 md:px-4 flex items-center justify-center overflow-hidden hover:bg-white/30 transition-colors duration-200 cursor-pointer">
+          <div className="w-full text-left">
+            <span className="text-[var(--vf-primary)] lg:text-[14px] md:text-xs font-ubuntu font-semibold leading-none">Ávia</span>
           </div>
         </div>
-        <div className={styles['c_header-tabs-instance4']}>
-          <div className={styles['c_header-tabs-text16']}>
-            <span className={styles['c_header-tabs-text17']}>Ingredients</span>
+        <div className="min-w-[7.6875rem] md:max-w-none w-full h-full py-4 px-6 md:py-3 md:px-4 flex items-center justify-center overflow-hidden hover:bg-white/30 transition-colors duration-200 cursor-pointer">
+          <div className="w-full text-left">
+            <span className="text-[var(--vf-primary)] min-w-[125px] lg:text-[14px] md:text-xs font-ubuntu font-semibold leading-none">Ingredients</span>
           </div>
         </div>
       </div>
-      <div className={styles['c_header-tabs-instance5']}>
-        <div className={styles['c_header-tabs-instance6']}>
+      <div className="max-w-[8.5rem] w-full h-full gap-2 py-1.5 px-2 md:py-1 md:px-1.5 flex items-center justify-center overflow-hidden">
+        <div className="max-w-4.5 w-full h-full flex items-center justify-center overflow-hidden">
           <Globe 
             size={18}
             color="var(--vf-primary)"
           />
         </div>
-        <div className={styles['c_header-tabs-text18']}>
-          <span className={styles['c_header-tabs-text19']}>Português</span>
+        <div className="w-full text-left">
+          <span className="text-[var(--vf-primary)] text-[14px] md:text-xs font-ubuntu font-semibold leading-none">Português</span>
         </div>
-        <div className={styles['c_header-tabs-instance7']}>
+        <div className="max-w-4.5 w-full h-full flex items-center justify-center overflow-hidden">
           <ChevronDown 
             size={18}
             color="var(--vf-primary)"

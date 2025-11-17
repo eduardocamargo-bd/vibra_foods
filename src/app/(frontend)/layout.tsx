@@ -16,7 +16,6 @@ import CookieBanner from '@/components/CookieBanner'
 import CookieModal from '@/components/CookieModal'
 // import CookieDebugger from '@/components/CookieDebugger'
 import { AnalyticsProvider } from '@/components/Analytics'
-import HeaderTabs from '@/components/ui/HeaderTabs'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -40,16 +39,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           />
 
           <Header />
-          <HeaderTabs />
           {children}
           <Footer />
           
-          {/* Cookie Management & Analytics */}
+      
           <CookieBanner />
           <CookieModal />
-          {/* <CookieDebugger /> */}
+        
           
-          {/* Analytics - carregados apenas após consentimento */}
           <AnalyticsProvider />
         </Providers>
       </body>

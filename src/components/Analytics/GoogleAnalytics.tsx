@@ -32,9 +32,9 @@ export const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({
     }
 
 
-    window.gtag = function() {
+    window.gtag = function(...args: any[]) {
       if (window.dataLayer) {
-        window.dataLayer.push(arguments)
+        window.dataLayer.push(args)
       }
     }
 
