@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { Globe, ChevronDown } from 'lucide-react'
+import { useTranslation } from '../../../contexts/LanguageContext'
 
 interface HeaderTabsProps {
   className?: string
@@ -9,16 +10,18 @@ interface HeaderTabsProps {
 
 const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const { language, setLanguage, t } = useTranslation()
 
   const languages = [
-    { code: 'pt', label: 'Português' },
-    { code: 'en', label: 'English' }
+    { code: 'pt' as const, label: 'Português' },
+    { code: 'en' as const, label: 'English' },
+    { code: 'es' as const, label: 'Español' }
   ]
 
-  const currentLanguage = languages[0] // Sempre PT por padrão
+  const currentLanguage = languages.find(lang => lang.code === language) || languages[0]
 
-  const handleLanguageChange = (newLocale: string) => {
-    // Por enquanto apenas fecha o dropdown
+  const handleLanguageChange = (newLanguage: 'pt' | 'en' | 'es') => {
+    setLanguage(newLanguage)
     setIsOpen(false)
   }
 
@@ -27,22 +30,22 @@ const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
       <div className="sm:w-[70%] max-w-[24.8125rem] flex items-center justify-start">
         <div className="w-full max-w-[6rem] h-full sm:h-[2.6875rem] lg:h-full whitespace-nowrap min-w-[6rem] lg:min-w-[7.875rem] gap-2 py-4  md:py-3 md:px-4 flex items-center justify-center rounded-tr-[16px] bg-[var(--vf-white)]">
           <div className="w-full text-center">
-            <span className="text-[var(--vf-primary)] !text-xs lg:!text-[14px] font-ubuntu font-medium leading-none">Vibra Foods</span>
+            <span className="text-[var(--vf-primary)] !text-xs lg:!text-[14px] font-ubuntu font-medium leading-none">{t('header.vibraFoods')}</span>
           </div>
         </div>
         <div className="md:max-w-none w-full h-full py-4 px-4 md:py-3 md:px-4 flex items-center justify-center hover:bg-white/30 transition-colors duration-200 cursor-pointer">
           <div className="w-full text-left">
-            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">Nat</span>
+            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">{t('header.nat')}</span>
           </div>
         </div>
         <div className="md:max-w-none w-full h-full py-4 px-4 md:py-3 md:px-4 flex items-center justify-center hover:bg-white/30 transition-colors duration-200 cursor-pointer">
           <div className="w-full text-left">
-            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">Avia</span>
+            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">{t('header.avia')}</span>
           </div>
         </div>
         <div className="md:max-w-none w-full h-full py-4 px-4 md:py-3 md:px-4 flex items-center justify-center hover:bg-white/30 transition-colors duration-200 cursor-pointer">
           <div className="w-full text-left">
-            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">Ingredientes</span>
+            <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none">{t('header.ingredients')}</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,73 @@
+{
+  "home": {
+    "title": "Vibra Foods",
+    "hero": {
+      "heading": "Vibra Foods: Sostenibilidad e Innovación",
+      "description": "Conozca nuestra empresa y nuestros compromisos con un futuro saludable."
+    }
+  },
+  "header": {
+    "vibraFoods": "Vibra Foods",
+    "nat": "Nat",
+    "avia": "Avia",
+    "ingredients": "Ingredientes",
+    "portuguese": "Portugués",
+    "english": "Inglés",
+    "spanish": "Español",
+    "pt": "PT",
+    "en": "EN",
+    "es": "ES"
+  },
+  "footer": {
+    "mission": "Alimentar vidas para inspirar un futuro más saludable",
+    "communication": "Estimados clientes y socios, Vibra Agroindustrial S.A. se comunica únicamente a través de sus canales oficiales y dominios electrónicos oficiales.",
+    "freeCall": "Llamada gratuita: 0800 724 4949",
+    "southRegion": "Porto Alegre y región sur: 3883 2100",
+    "email": "crc@vibra.com.br",
+    "newsletterPlaceholder": "Reciba las noticias de Vibra Foods en su correo electrónico",
+    "send": "Enviar",
+    "about": "Sobre",
+    "manifesto": "Manifiesto",
+    "brands": "Marcas",
+    "history": "Historia",
+    "qualityControl": "Control de Calidad",
+    "innovation": "Innovación",
+    "projects": "Proyectos",
+    "partners": "Socios",
+    "governance": "Gobierno",
+    "certifications": "Certificaciones",
+    "whereWeAre": "Dónde estamos",
+    "news": "Noticias",
+    "contacts": "Contactos",
+    "healthyFuture": "Futuro Saludable",
+    "esgCommitment": "Compromiso ESG",
+    "animalWelfare": "Bienestar Animal",
+    "environment": "Medio Ambiente",
+    "socioeconomic": "Socioeconómico",
+    "socialEnvironmentalImpact": "Impacto social y ambiental",
+    "institutional": "Institucional",
+    "reports": "Informes",
+    "conductEthics": "Conducta y Ética",
+    "complaintsChannel": "Canal de Denuncias",
+    "careers": "Carreras",
+    "whoWeAre": "Quiénes somos",
+    "howWeVibrate": "Cómo vibramos",
+    "diversityInclusion": "Diversidad e Inclusión",
+    "benefits": "Beneficios",
+    "jobs": "Vacantes",
+    "suppliers": "Proveedores",
+    "wantToBeSupplier": "Quiero ser proveedor",
+    "copyright": "© 2025 Vibra Agroindustrial S.A.",
+    "allRightsReserved": "Todos los derechos reservados",
+    "privacyPolicy": "Política de Privacidad",
+    "cookieSettings": "Configuración de Cookies",
+    "changeLanguage": "Cambiar idioma",
+    "pt": "PT",
+    "en": "EN",
+    "es": "ES"
+  },
+  "search": {
+    "title": "Buscar",
+    "noResults": "No se encontraron resultados."
+  }
+}

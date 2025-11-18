@@ -14,8 +14,9 @@ import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 import CookieBanner from '@/components/CookieBanner'
 import CookieModal from '@/components/CookieModal'
-// import CookieDebugger from '@/components/CookieDebugger'
+
 import { AnalyticsProvider } from '@/components/Analytics'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -31,26 +32,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/assets/logo_page.svg" rel="apple-touch-icon" />
       </head>
       <body>
-        <Providers>
-            <AdminBar
-              adminBarProps={{
-                preview: isEnabled,
-              }}
-            />
+        <LanguageProvider>
+          <Providers>
+              <AdminBar
+                adminBarProps={{
+                  preview: isEnabled,
+                }}
+              />
 
-            <Header />
-            <main className="grid grid-cols-1">
-              {children}
-            </main>
-            <Footer />
+              <Header />
+              <main className="grid grid-cols-1">
+                {children}
+              </main>
+              <Footer />
+              
             
-        
-            <CookieBanner />
-            <CookieModal />
-          
+              <CookieBanner />
+              <CookieModal />
             
-            <AnalyticsProvider />
-          </Providers>
+              
+              <AnalyticsProvider />
+            </Providers>
+        </LanguageProvider>
       </body>
     </html>
   )

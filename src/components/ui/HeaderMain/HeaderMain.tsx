@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Search, Menu, X } from 'lucide-react'
+import { useTranslation } from '../../../contexts/LanguageContext'
 
 interface HeaderMainProps {
   className?: string
@@ -10,6 +11,7 @@ interface HeaderMainProps {
 
 const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -73,7 +75,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
                 font-ubuntu transition-colors duration-200
                 hover:text-[var(--vf-primary)]
               ">
-                Sobre nós
+                {t('header.nav.aboutUs')}
               </span>
             </div>
             
@@ -89,7 +91,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
                 font-ubuntu transition-colors duration-200
                 hover:text-[var(--vf-primary)]
               ">
-                Futuro saudável
+                {t('header.nav.healthyFuture')}
               </span>
             </div>
             
@@ -105,7 +107,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
                 font-ubuntu transition-colors duration-200
                 hover:text-[var(--vf-primary)]
               ">
-                Inovação
+                {t('header.nav.innovation')}
               </span>
             </div>
             
@@ -121,7 +123,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
                 font-ubuntu transition-colors duration-200
                 hover:text-[var(--vf-primary)]
               ">
-                Trabalhe conosco
+                {t('header.nav.workWithUs')}
               </span>
             </div>
             
@@ -137,7 +139,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
                 font-ubuntu transition-colors duration-200
                 hover:text-[var(--vf-primary)]
               ">
-                Notícias
+                {t('header.nav.news')}
               </span>
             </div>
           </div>
@@ -179,7 +181,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
               text-white text-[14px] font-semibold
               font-ubuntu text-center
             ">
-              Quero ser cliente
+              {t('header.nav.beClient')}
             </span>
           </div>
           
@@ -197,7 +199,7 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
               font-ubuntu text-center
               group-hover:text-white
             ">
-              Espaço do produtor
+              {t('header.nav.producerSpace')}
             </span>
           </div>
         </div>
@@ -219,31 +221,31 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-start py-3 px-4 cursor-pointer rounded-md hover:bg-black/5 transition-colors duration-200" onClick={closeMobileMenu}>
                   <span className="text-black text-[16px] font-medium font-ubuntu">
-                    Sobre nós
+                    {t('header.nav.aboutUs')}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-start py-3 px-4 cursor-pointer rounded-md hover:bg-black/5 transition-colors duration-200" onClick={closeMobileMenu}>
                   <span className="text-black text-[16px] font-medium font-ubuntu">
-                    Futuro saudável
+                    {t('header.nav.healthyFuture')}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-start py-3 px-4 cursor-pointer rounded-md hover:bg-black/5 transition-colors duration-200" onClick={closeMobileMenu}>
                   <span className="text-black text-[16px] font-medium font-ubuntu">
-                    Inovação
+                    {t('header.nav.innovation')}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-start py-3 px-4 cursor-pointer rounded-md hover:bg-black/5 transition-colors duration-200" onClick={closeMobileMenu}>
                   <span className="text-black text-[16px] font-medium font-ubuntu">
-                    Trabalhe conosco
+                    {t('header.nav.workWithUs')}
                   </span>
                 </div>
                 
                 <div className="flex items-center justify-start py-3 px-4 cursor-pointer rounded-md hover:bg-black/5 transition-colors duration-200" onClick={closeMobileMenu}>
                   <span className="text-black text-[16px] font-medium font-ubuntu">
-                    Notícias
+                    {t('header.nav.news')}
                   </span>
                 </div>
 

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { Phone, Mail, Instagram, Facebook, Twitter, Linkedin, Check, Globe, ChevronDown } from 'lucide-react'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 import type { Footer } from '@/payload-types'
 
@@ -12,6 +13,7 @@ interface FooterClientProps {
 }
 
 export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
+  const { t } = useTranslation()
   const navItems = footerData?.navItems || []
 
   return (
@@ -28,7 +30,7 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
                 className="w-[208px] h-[78px]"
               />
               <p className="text-white text-sm font-ubuntu leading-[18px] max-w-[208px]">
-                Nossa missão é promover saúde e bem-estar através de alimentos naturais e funcionais de alta qualidade.
+                {t('footer.mission')}
               </p>
             </div>
 
@@ -42,7 +44,7 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
             </div>
 
             <p className="text-white text-sm font-ubuntu leading-[18px] max-w-[208px]">
-              Entre em contato conosco
+              {t('footer.communication')}
             </p>
 
             <div className="flex items-start justify-start gap-6 min-w-[208px]">
@@ -55,10 +57,10 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
               <div className="flex items-start gap-3">
                 <div className="flex flex-col gap-1 lg:max-w-[208px]">
                   <p className="text-white text-sm font-ubuntu leading-[18px]">
-                    Ligação gratuita
+                    {t('footer.freeCall')}
                   </p>
                   <p className="text-white text-sm font-ubuntu leading-[18px]">
-                    Região Sul
+                    {t('footer.southRegion')}
                   </p>
                 </div>
               </div>
@@ -71,7 +73,7 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
 
               <div className="flex items-start gap-3">
 
-                <p className="text-white text-sm font-ubuntu leading-[18px]">contato@vibrafoods.com.br</p>
+                <p className="text-white text-sm font-ubuntu leading-[18px]">{t('footer.email')}</p>
               </div>
             </div>
           </div>
@@ -84,159 +86,159 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
                     <Mail className="w-4 h-4 text-[var(--vf-gray)]" />
                     <input
                       type="email"
-                      placeholder="Digite seu e-mail"
+                      placeholder={t('footer.newsletterPlaceholder')}
                       className="flex-1 bg-transparent border-none outline-none text-[var(--vf-gray)] text-xs md:text-sm font-roboto leading-[22px]"
                     />
                   </div>
                 </div>
                   <button className="vf-button-primary-styled">
-                    Enviar
+                    {t('footer.send')}
                   </button>
               </div>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-[613px]">
               <div className="flex flex-col gap-6">
-                <h3 className="text-white text-lg font-ubuntu font-bold">Sobre</h3>
+                <h3 className="text-white text-lg font-ubuntu font-bold">{t('footer.about')}</h3>
                 <div className="flex flex-col gap-3">
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Manifesto
+                    {t('footer.manifesto')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Marcas
+                    {t('footer.brands')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    História
+                    {t('footer.history')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Controle de Qualidade
+                    {t('footer.qualityControl')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Inovação
+                    {t('footer.innovation')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Projetos
+                    {t('footer.projects')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Parceiros
+                    {t('footer.partners')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Governança
+                    {t('footer.governance')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Certificações
+                    {t('footer.certifications')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Onde Estamos
+                    {t('footer.whereWeAre')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Notícias
+                    {t('footer.news')}
                   </Link>
                   <Link
                     href="#"
                     className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                   >
-                    Contatos
+                    {t('footer.contacts')}
                   </Link>
                 </div>
               </div>
 
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-6">
-                  <h3 className="text-white text-lg font-ubuntu font-bold">Futuro Saudável</h3>
+                  <h3 className="text-white text-lg font-ubuntu font-bold">{t('footer.healthyFuture')}</h3>
                   <div className="flex flex-col gap-3">
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Compromisso ESG
+                      {t('footer.esgCommitment')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Bem-estar Animal
+                      {t('footer.animalWelfare')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Meio Ambiente
+                      {t('footer.environment')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Socioeconômico
+                      {t('footer.socioeconomic')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Impacto Social e Ambiental
+                      {t('footer.socialEnvironmentalImpact')}
                     </Link>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-6">
-                  <h3 className="text-white text-lg font-ubuntu font-bold">Institucional</h3>
+                  <h3 className="text-white text-lg font-ubuntu font-bold">{t('footer.institutional')}</h3>
                   <div className="flex flex-col gap-3">
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Relatórios
+                      {t('footer.reports')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Governança
+                      {t('footer.governance')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Código de Conduta e Ética
+                      {t('footer.conductEthics')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Canal de Denúncias
+                      {t('footer.complaintsChannel')}
                     </Link>
                   </div>
                 </div>
@@ -244,61 +246,61 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
 
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-6">
-                  <h3 className="text-white text-lg font-ubuntu font-bold">Carreiras</h3>
+                  <h3 className="text-white text-lg font-ubuntu font-bold">{t('footer.careers')}</h3>
                   <div className="flex flex-col gap-3">
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Quem Somos
+                      {t('footer.whoWeAre')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Como Vibramos
+                      {t('footer.howWeVibrate')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Nossa Missão
+                      {t('footer.ourMission')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Diversidade e Inclusão
+                      {t('footer.diversityInclusion')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Benefícios
+                      {t('footer.benefits')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Vagas
+                      {t('footer.jobs')}
                     </Link>
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Onde Estamos
+                      {t('footer.whereWeAre')}
                     </Link>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-6">
-                  <h3 className="text-white text-lg font-ubuntu font-bold">Fornecedores</h3>
+                  <h3 className="text-white text-lg font-ubuntu font-bold">{t('footer.suppliers')}</h3>
                   <div className="flex flex-col gap-3">
                     <Link
                       href="#"
                       className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
                     >
-                      Quer ser Fornecedor?
+                      {t('footer.wantToBeSupplier')}
                     </Link>
                   </div>
                 </div>
@@ -312,10 +314,10 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
           <div className="flex flex-row gap-5">
             <p className="text-white text-[12px] lg:text-sm font-ubuntu leading-[18px]">
-              © 2024 Vibra Foods
+              {t('footer.copyright')}
             </p>
             <p className="text-white text-sm font-ubuntu font-semibold leading-[18px] whitespace-nowrap">
-              Todos os direitos reservados
+              {t('footer.allRightsReserved')}
             </p>
           </div>
           <div className="flex flex-row  lg:flex-row items-start lg:items-center gap-6">
@@ -323,18 +325,18 @@ export const FooterClient: React.FC<FooterClientProps> = ({ footerData }) => {
               href="#"
               className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
             >
-              Política de Privacidade
+              {t('footer.privacyPolicy')}
             </Link>
             <Link
               href="#"
               className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap"
             >
-              Configurações de Cookies
+              {t('footer.cookieSettings')}
             </Link>
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-white" />
-              <span className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap hidden md:block">Mudar Idioma</span>
-              <span className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap md:hidden">PT</span>
+              <span className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap hidden md:block">{t('footer.changeLanguage')}</span>
+              <span className="text-white text-xs md:text-sm font-ubuntu leading-[18px] hover:opacity-80 whitespace-nowrap md:hidden">{t('footer.pt')}</span>
               <ChevronDown className="w-4 h-4 text-white" />
             </div>
           </div>
