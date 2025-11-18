@@ -1,0 +1,68 @@
+{
+  "home": {
+    "title": "Vibra Foods",
+    "hero": {
+      "heading": "Vibra Foods: Sustainability and Innovation",
+      "description": "Learn about our company and our commitments to a healthy future."
+    }
+  },
+  "header": {
+    "vibraFoods": "Vibra Foods",
+    "nat": "Nat",
+    "avia": "Avia",
+    "ingredients": "Ingredients",
+    "portuguese": "Portuguese",
+    "pt": "PT"
+  },
+  "footer": {
+    "mission": "Feed lives to inspire a healthier future",
+    "communication": "Dear customers and partners, Vibra Agroindustrial S.A. communicates only through its official channels and official electronic domains.",
+    "freeCall": "Free call: 0800 724 4949",
+    "southRegion": "Porto Alegre and southern region: 3883 2100",
+    "email": "crc@vibra.com.br",
+    "newsletterPlaceholder": "Receive Vibra Foods news in your email",
+    "send": "Send",
+    "about": "About",
+    "manifesto": "Manifesto",
+    "brands": "Brands",
+    "history": "History",
+    "qualityControl": "Quality Control",
+    "innovation": "Innovation",
+    "projects": "Projects",
+    "partners": "Partners",
+    "governance": "Governance",
+    "certifications": "Certifications",
+    "whereWeAre": "Where we are",
+    "news": "News",
+    "contacts": "Contacts",
+    "healthyFuture": "Healthy Future",
+    "esgCommitment": "ESG Commitment",
+    "animalWelfare": "Animal Welfare",
+    "environment": "Environment",
+    "socioeconomic": "Socioeconomic",
+    "socialEnvironmentalImpact": "Social and environmental impact",
+    "institutional": "Institutional",
+    "reports": "Reports",
+    "conductEthics": "Conduct and Ethics",
+    "complaintsChannel": "Complaints Channel",
+    "careers": "Careers",
+    "whoWeAre": "Who we are",
+    "howWeVibrate": "How we vibrate",
+    "mission": "Mission",
+    "diversityInclusion": "Diversity and inclusion",
+    "benefits": "Benefits",
+    "jobs": "Jobs",
+    "suppliers": "Suppliers",
+    "wantToBeSupplier": "Want to be a supplier",
+    "copyright": "© 2025 Vibra Agroindustrial S.A.",
+    "allRightsReserved": "All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "cookieSettings": "Cookie Settings",
+    "changeLanguage": "Change language",
+    "pt": "PT"
+  },
+  "search": {
+    "title": "Search",
+    "noResults": "No results found."
+  }
+}

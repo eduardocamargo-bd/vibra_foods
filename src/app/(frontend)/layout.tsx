@@ -24,31 +24,33 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="pt" suppressHydrationWarning>
       <head>
         <InitTheme />
-        <link href="/favicon.ico" rel="icon" sizes="32x32" />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/assets/logo_page.svg" rel="icon" type="image/svg+xml" />
+        <link href="/assets/logo_page.svg" rel="apple-touch-icon" />
       </head>
       <body>
         <Providers>
-          <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
+            <AdminBar
+              adminBarProps={{
+                preview: isEnabled,
+              }}
+            />
 
-          <Header />
-          {children}
-          <Footer />
-          
-      
-          <CookieBanner />
-          <CookieModal />
+            <Header />
+            <main className="grid grid-cols-1">
+              {children}
+            </main>
+            <Footer />
+            
         
+            <CookieBanner />
+            <CookieModal />
           
-          <AnalyticsProvider />
-        </Providers>
+            
+            <AnalyticsProvider />
+          </Providers>
       </body>
     </html>
   )
