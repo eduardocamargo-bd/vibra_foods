@@ -1,0 +1,22 @@
+{
+  "vibraFoods": "Vibra Foods",
+  "nat": "Nat",
+  "avia": "Ávia",
+  "ingredients": "Ingredientes",
+  "changeLanguage": "Cambiar Idioma",
+  "pt": "PT",
+  "portuguese": "Portugués",
+  "english": "Inglés",
+  "spanish": "Español",
+  "en": "EN",
+  "es": "ES",
+  "nav": {
+    "aboutUs": "Sobre nosotros",
+    "healthyFuture": "Futuro saludable",
+    "innovation": "Innovación",
+    "workWithUs": "Trabaje con nosotros",
+    "news": "Noticias",
+    "beClient": "Quiero ser cliente",
+    "producerSpace": "Espacio del productor"
+  }
+}

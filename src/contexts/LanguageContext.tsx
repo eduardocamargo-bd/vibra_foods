@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-export type Language = 'pt' | 'en' | 'es'
+export type Language = 'pt' | 'en' | 'es' | 'ar'
 
 export interface Translations {
   [key: string]: string | Translations
@@ -13,13 +13,13 @@ const translations: Record<Language, Translations> = {
     header: {
       vibraFoods: 'Vibra Foods',
       nat: 'Nat',
-      avia: 'Avia',
+      avia: 'Ávia',
       ingredients: 'Ingredientes',
       changeLanguage: 'Mudar Idioma',
       pt: 'PT',
       portuguese: 'Português',
-      english: 'English',
-      spanish: 'Español',
+      english: 'Inglês',
+      spanish: 'Espanhol',
       en: 'EN',
       es: 'ES',
       nav: {
@@ -72,7 +72,7 @@ const translations: Record<Language, Translations> = {
       jobs: 'Vagas',
       suppliers: 'Fornecedores',
       wantToBeSupplier: 'Quer ser Fornecedor?',
-      copyright: '© 2024 Vibra Foods',
+      copyright: '© 2025 Vibra Agroindustrial S.A.',
       allRightsReserved: 'Todos os direitos reservados',
       privacyPolicy: 'Política de Privacidade',
       cookieSettings: 'Configurações de Cookies'
@@ -82,7 +82,7 @@ const translations: Record<Language, Translations> = {
     header: {
       vibraFoods: 'Vibra Foods',
       nat: 'Nat',
-      avia: 'Avia',
+      avia: 'Ávia',
       ingredients: 'Ingredients',
       changeLanguage: 'Change Language',
       pt: 'PT',
@@ -141,7 +141,7 @@ const translations: Record<Language, Translations> = {
       jobs: 'Jobs',
       suppliers: 'Suppliers',
       wantToBeSupplier: 'Want to be a Supplier?',
-      copyright: '© 2024 Vibra Foods',
+      copyright: '© 2025 Vibra Agroindustrial S.A.',
       allRightsReserved: 'All rights reserved',
       privacyPolicy: 'Privacy Policy',
       cookieSettings: 'Cookie Settings'
@@ -151,7 +151,7 @@ const translations: Record<Language, Translations> = {
     header: {
       vibraFoods: 'Vibra Foods',
       nat: 'Nat',
-      avia: 'Avia',
+      avia: 'Ávia',
       ingredients: 'Ingredientes',
       changeLanguage: 'Cambiar Idioma',
       pt: 'PT',
@@ -210,10 +210,81 @@ const translations: Record<Language, Translations> = {
       jobs: 'Vacantes',
       suppliers: 'Proveedores',
       wantToBeSupplier: '¿Quiere ser Proveedor?',
-      copyright: '© 2024 Vibra Foods',
+      copyright: '© 2025 Vibra Agroindustrial S.A.',
       allRightsReserved: 'Todos los derechos reservados',
       privacyPolicy: 'Política de Privacidad',
       cookieSettings: 'Configuración de Cookies'
+    }
+  },
+  ar: {
+    header: {
+      vibraFoods: 'فيبرا فودز',
+      nat: 'نات',
+      avia: 'أفيا',
+      ingredients: 'المكونات',
+      changeLanguage: 'تغيير اللغة',
+      pt: 'PT',
+      portuguese: 'البرتغالية',
+      english: 'الإنجليزية',
+      spanish: 'الإسبانية',
+      arabic: 'العَرَبِيَّة',
+      en: 'EN',
+      es: 'ES',
+      ar: 'AR',
+      nav: {
+        aboutUs: 'معلومات عنا',
+        healthyFuture: 'مستقبل صحي',
+        innovation: 'الابتكار',
+        workWithUs: 'اعمل معنا',
+        news: 'الأخبار',
+        beClient: 'كن عميلاً',
+        producerSpace: 'مساحة المنتج'
+      }
+    },
+    footer: {
+      mission: 'مهمتنا هي تعزيز الصحة والرفاهية من خلال الأطعمة الطبيعية والوظيفية عالية الجودة.',
+      communication: 'تواصل معنا',
+      freeCall: 'مكالمة مجانية',
+      southRegion: 'المنطقة الجنوبية',
+      email: 'contact@vibrafoods.com',
+      newsletterPlaceholder: 'أدخل بريدك الإلكتروني',
+      send: 'إرسال',
+      about: 'حول',
+      manifesto: 'البيان',
+      brands: 'العلامات التجارية',
+      history: 'التاريخ',
+      qualityControl: 'مراقبة الجودة',
+      innovation: 'الابتكار',
+      projects: 'المشاريع',
+      partners: 'الشركاء',
+      governance: 'الحوكمة',
+      certifications: 'الشهادات',
+      whereWeAre: 'أين نحن',
+      news: 'الأخبار',
+      contacts: 'جهات الاتصال',
+      healthyFuture: 'مستقبل صحي',
+      esgCommitment: 'التزام ESG',
+      animalWelfare: 'رفاهية الحيوان',
+      environment: 'البيئة',
+      socioeconomic: 'اجتماعي اقتصادي',
+      socialEnvironmentalImpact: 'التأثير الاجتماعي والبيئي',
+      institutional: 'مؤسسي',
+      reports: 'التقارير',
+      conductEthics: 'مدونة السلوك والأخلاق',
+      complaintsChannel: 'قناة الشكاوى',
+      careers: 'الوظائف',
+      whoWeAre: 'من نحن',
+      howWeVibrate: 'كيف نرتجف',
+      ourMission: 'مهمتنا',
+      diversityInclusion: 'التنوع والشمول',
+      benefits: 'المزايا',
+      jobs: 'الوظائف',
+      suppliers: 'الموردون',
+      wantToBeSupplier: 'تريد أن تكون مورداً؟',
+      copyright: '© 2025 فيبرا أغروإندستريال S.A.',
+      allRightsReserved: 'جميع الحقوق محفوظة',
+      privacyPolicy: 'سياسة الخصوصية',
+      cookieSettings: 'إعدادات ملفات تعريف الارتباط'
     }
   }
 }

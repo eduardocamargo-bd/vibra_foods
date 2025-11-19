@@ -10,6 +10,7 @@ import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
 import HeaderTabs from '@/components/ui/HeaderTabs'
 import HeaderMain from '@/components/ui/HeaderMain'
+import { HeaderProvider } from '@/contexts/HeaderContext'
 
 interface HeaderClientProps {
   data: Header
@@ -32,13 +33,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
   }, [headerTheme])
 
   return (
-    <>
-     <HeaderTabs />
-      <header >
-    <HeaderMain />
+    <HeaderProvider>
+      <HeaderTabs />
+      <header>
+        <HeaderMain />
       </header>
-     
-    
-    </>
+    </HeaderProvider>
   )
 }

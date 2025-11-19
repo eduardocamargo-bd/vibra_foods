@@ -1,0 +1,17 @@
+{
+  "vibraFoods": "Vibra Foods",
+  "nat": "Nat",
+  "avia": "Ávia",
+  "ingredients": "Ingredients",
+  "nav": {
+    "aboutUs": "About Us",
+    "healthyFuture": "Healthy Future",
+    "innovation": "Innovation",
+    "workWithUs": "Work with Us",
+    "news": "News",
+    "beClient": "Be a Client",
+    "producerSpace": "Producer Space"
+  },
+  "backToTop": "Back to top",
+  "chatTooltip": "New communication channel for producer families"
+}

@@ -16,7 +16,8 @@ import CookieBanner from '@/components/CookieBanner'
 import CookieModal from '@/components/CookieModal'
 
 import { AnalyticsProvider } from '@/components/Analytics'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+import ClientProviders from '@/providers/ClientProviders'
+import BackToTopButton from '@/components/ui/BackToTopButton'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -32,8 +33,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link href="/assets/logo_page.svg" rel="apple-touch-icon" />
       </head>
       <body>
-        <LanguageProvider>
-          <Providers>
+        <ClientProviders>
+            <Providers>
               <AdminBar
                 adminBarProps={{
                   preview: isEnabled,
@@ -44,16 +45,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <main className="grid grid-cols-1">
                 {children}
               </main>
+              <BackToTopButton />
               <Footer />
               
-            
               <CookieBanner />
               <CookieModal />
             
               
               <AnalyticsProvider />
             </Providers>
-        </LanguageProvider>
+          </ClientProviders>
       </body>
     </html>
   )
