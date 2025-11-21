@@ -45,9 +45,9 @@ export const NumberSectionHomeBlock: React.FC<NumberSectionHomeBlockProps> = ({
 
 
   return (
-    <div key={i18n.language} className="overflow-visible bg-white sm:min-h-[1177px]">
+    <div key={i18n.language} className="overflow-visible bg-white sm:min-h-[1177px] px-5 md:px-0">
       <div className="flex flex-col items-center pt-16">
-        <div className="w-full max-w-[552px] text-center md:text-center text-left mb-8">
+        <div className="w-full max-w-[552px] text-left md:text-center mb-8">
           <p className="m-0 leading-[58px]">
             <span className="text-[#004349] text-5xl font-light font-ubuntu">
               {t('sectionTitle')}
@@ -55,14 +55,14 @@ export const NumberSectionHomeBlock: React.FC<NumberSectionHomeBlockProps> = ({
           </p>
         </div>
 
-        <div className="w-full max-w-[552px] lg:max-w-[552px] text-center md:text-center text-left mb-12">
+        <div className="w-full max-w-[552px] lg:max-w-[552px] text-left md:text-center mb-12">
           <p className="text-[#004349] text-3xl font-light font-ubuntu leading-[45px] m-0">
             {t('description')}
           </p>
         </div>
 
         <div className="flex gap-4 justify-center flex-wrap mb-[58px] md:mb-[120px] md:flex-nowrap md:justify-center flex-col items-center md:overflow-hidden">
-          <div className="flex gap-4 md:hidden mb-4">
+          <div className="flex gap-4 md:hidden mb-4 w-full max-w-[360px]">
             {stats
               ?.filter(
                 (stat) =>
@@ -89,12 +89,13 @@ export const NumberSectionHomeBlock: React.FC<NumberSectionHomeBlockProps> = ({
                     variant={variant}
                     backgroundColor={backgroundColor}
                     maxHeight="175px"
+                    className="flex-1 min-w-0"
                   />
                 )
               })}
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden w-full max-w-[360px]">
             {stats
               ?.filter((stat) => stat.number.toString().includes('+900'))
               .map((stat: Stat, index: number) => {

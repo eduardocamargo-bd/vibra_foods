@@ -10,8 +10,13 @@ const namespaces: Record<string, Record<string, any>> = {
   footer: { pt: footerPt, en: footerEn, es: footerEs },
 }
 
-function getNested(obj: unknown, path: string) {
-  return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj)
+function getNested(obj: Record<string, any> | undefined, path: string): any {
+  return path.split('.').reduce((acc, part) => {
+    if (acc && typeof acc === 'object' && part in acc) {
+      return acc[part]
+    }
+    return undefined
+  }, obj)
 }
 
 export function getServerTranslation(ns: 'header' | 'footer', key: string, lng = 'pt') {
