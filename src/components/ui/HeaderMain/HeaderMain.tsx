@@ -11,10 +11,9 @@ interface HeaderMainProps {
 }
 
 const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const { activeTab } = useHeader()
+  const { activeTab, isMobileMenuOpen, setIsMobileMenuOpen } = useHeader()
   const { t, i18n } = useTranslation('header')
 
   const languages = [
@@ -58,11 +57,11 @@ const HeaderMain: React.FC<HeaderMainProps> = ({ className }) => {
   }
   return (
     <div className={`
-      w-full h-[4.5rem] md:overflow-hidden max-w-full 
+      relative w-full h-[4.5rem] md:overflow-hidden max-w-full 
       flex items-center justify-center 
       bg-white border-b border-[var(--vf-border)] 
       rounded-b-[2rem] p-0 m-0 mx-auto
-      shadow-[var(--vf-shadow-vibra)]
+      shadow-[var(--vf-shadow-vibra)] z-20
       ${className || ''}
     `}>
       <div className="

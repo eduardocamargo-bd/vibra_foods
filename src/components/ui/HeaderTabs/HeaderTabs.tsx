@@ -30,7 +30,7 @@ const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
   const currentLangCode = (i18n.language || 'pt').split('-')[0]
   const currentLanguage = languages.find((lang) => lang.code === currentLangCode) || languages[0]
 
-  const handleLanguageChange = (newLanguage: 'pt' | 'en' | 'es') => {
+  const handleLanguageChange = (newLanguage: 'pt' | 'en' | 'es' | 'ar') => {
     i18n.changeLanguage(newLanguage)
     setIsOpen(false)
   }
@@ -38,12 +38,12 @@ const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
   return (
     <div className={`w-full max-h-11 md:max-h-14 gap-8 md:gap-4 pr-8 md:pr-4 flex items-center justify-between bg-[var(--vf-secondary)] ${className || ''}`}>
       <div className="sm:w-[70%] max-w-[24.8125rem] flex items-center justify-start">
-        <div className={`w-full max-w-[6rem] h-full sm:h-[2.6875rem] lg:h-full whitespace-nowrap min-w-[6rem] lg:min-w-[7.875rem] gap-2 py-4  md:py-3 md:px-4 flex items-center justify-center hover:bg-white/30 hover:rounded-t-[16px] transition-colors duration-200 cursor-pointer ${activeTab === 'vibra' ? 'bg-white rounded-tr-[16px]' : 'bg-[var(--vf-secondary)]'}`} onClick={() => setActiveTab('vibra')}>
+        <div className={`w-full max-w-[6rem] h-full sm:h-[2.6875rem] lg:h-full whitespace-nowrap min-w-[6rem] lg:min-w-[7.875rem] gap-2 py-4  md:py-3 md:px-4 flex items-center justify-center ${activeTab === 'vibra' ? '' : 'hover:bg-white/30'} hover:rounded-t-[16px] transition-colors duration-200 cursor-pointer ${activeTab === 'vibra' ? 'bg-white rounded-tr-[16px]' : 'bg-[var(--vf-secondary)]'}`} onClick={() => setActiveTab('vibra')}>
           <div className="w-full text-center">
             <span className={`text-[var(--vf-primary)] !text-xs lg:!text-[14px] font-ubuntu leading-none ${activeTab === 'vibra' ? 'font-semibold' : 'font-medium'}`} suppressHydrationWarning>{safeT('vibraFoods')}</span>
           </div>
         </div>
-        <div className={`md:max-w-none w-full h-full py-4 px-4 md:py-3 md:px-4 flex items-center justify-center hover:bg-white/30 hover:rounded-t-[16px] transition-colors duration-200 cursor-pointer ${activeTab === 'nat' ? 'bg-white rounded-t-[16px]' : ''}`} onClick={() => setActiveTab('nat')}>
+        <div className={`md:max-w-none w-full h-full py-4 px-4 md:py-3 md:px-4 flex items-center justify-center ${activeTab === 'nat' ? '' : 'hover:bg-white/30'} hover:rounded-t-[16px] transition-colors duration-200 cursor-pointer ${activeTab === 'nat' ? 'bg-white rounded-t-[16px]' : ''}`} onClick={() => setActiveTab('nat')}>
           <div className="w-full text-left">
             <span className={`text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu leading-none ${activeTab === 'nat' ? 'font-semibold' : 'font-medium'}`}>{safeT('nat')}</span>
           </div>
@@ -59,26 +59,25 @@ const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
           </div>
         </div>
       </div>
-      <div className="max-w-[8.5rem] w-full h-full gap-1 py-1.5 px-2 md:py-1 md:px-1.5 flex items-center justify-center relative hover:bg-white/30 hover:rounded-[16px] transition-colors duration-200">
+      <div className={`max-w-[8.5rem] w-full h-full gap-2 py-1.5 px-2 flex items-center justify-center relative rounded-lg transition-all duration-200 cursor-pointer ${isOpen ? 'bg-white border border-gray-200' : 'hover:bg-white hover:border hover:border-gray-200'}`} onClick={() => setIsOpen(!isOpen)}>
         <div className="max-w-3 w-full h-full flex items-center justify-center flex-shrink-0">
           <Globe 
             size={18}
-            color="var(--vf-primary)"
+            color={isOpen ? "#004349" : "var(--vf-primary)"}
           />
         </div>
         <div 
-          className="flex-1 text-center cursor-pointer flex items-center "
-          onClick={() => setIsOpen(!isOpen)}
+          className="flex-1 text-center flex items-center "
         >
-          <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none hidden md:block" suppressHydrationWarning>
+          <span className={`text-xs lg:text-[14px] font-ubuntu font-semibold leading-none hidden md:block ${isOpen ? 'text-[#004349]' : 'text-[var(--vf-primary)] hover:text-[#004349]'}`} suppressHydrationWarning>
             {currentLanguage.label}
           </span>
-          <span className="text-[var(--vf-primary)] text-xs lg:text-[14px] font-ubuntu font-medium leading-none md:hidden">
+          <span className={`text-xs lg:text-[14px] font-ubuntu font-semibold leading-none md:hidden ${isOpen ? 'text-[#004349]' : 'text-[var(--vf-primary)] hover:text-[#004349]'}`}>
             {currentLanguage.code.toUpperCase()}
           </span>
           <ChevronDown 
             size={14}
-            color="var(--vf-primary)"
+            color={isOpen ? "#004349" : "var(--vf-primary)"}
             className={`ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           />
         </div>
@@ -89,7 +88,7 @@ const HeaderTabs: React.FC<HeaderTabsProps> = ({ className }) => {
               <div
                 key={lang.code}
                 className={`px-3 py-2 text-sm cursor-pointer hover:bg-gray-100 ${
-                  currentLanguage.code === lang.code ? 'bg-[var(--vf-secondary)] text-[var(--vf-primary)] font-semibold' : 'text-gray-700'
+                  currentLanguage.code === lang.code ? 'bg-white text-[#004349] font-semibold' : 'text-gray-700 bg-white/50'
                 }`}
                 onClick={() => handleLanguageChange(lang.code)}
               >

@@ -10,7 +10,7 @@ const namespaces: Record<string, Record<string, any>> = {
   footer: { pt: footerPt, en: footerEn, es: footerEs },
 }
 
-function getNested(obj: any, path: string) {
+function getNested(obj: unknown, path: string) {
   return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : undefined), obj)
 }
 

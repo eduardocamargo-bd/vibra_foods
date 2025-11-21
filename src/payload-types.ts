@@ -199,7 +199,15 @@ export interface Page {
       | null;
     media?: (number | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (
+    | BannerImageBlock
+    | NumberSectionHomeBlock
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -435,6 +443,34 @@ export interface User {
       }[]
     | null;
   password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerImageBlock".
+ */
+export interface BannerImageBlock {
+  image?: (number | null) | Media;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'bannerImage';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "NumberSectionHomeBlock".
+ */
+export interface NumberSectionHomeBlock {
+  sectionTitle?: string | null;
+  description?: string | null;
+  stats?:
+    | {
+        number?: string | null;
+        label?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'numberSectionHome';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1081,6 +1117,8 @@ export interface PagesSelect<T extends boolean = true> {
   layout?:
     | T
     | {
+        bannerImage?: T | BannerImageBlockSelect<T>;
+        numberSectionHome?: T | NumberSectionHomeBlockSelect<T>;
         cta?: T | CallToActionBlockSelect<T>;
         content?: T | ContentBlockSelect<T>;
         mediaBlock?: T | MediaBlockSelect<T>;
@@ -1100,6 +1138,32 @@ export interface PagesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "BannerImageBlock_select".
+ */
+export interface BannerImageBlockSelect<T extends boolean = true> {
+  image?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "NumberSectionHomeBlock_select".
+ */
+export interface NumberSectionHomeBlockSelect<T extends boolean = true> {
+  sectionTitle?: T;
+  description?: T;
+  stats?:
+    | T
+    | {
+        number?: T;
+        label?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

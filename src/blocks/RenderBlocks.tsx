@@ -3,13 +3,17 @@ import React, { Fragment } from 'react'
 import type { Page } from '@/payload-types'
 
 import { ArchiveBlock } from '@/blocks/ArchiveBlock/Component'
+import { BannerImageBlock } from '@/blocks/BannerImage/Component.client'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
+import { NumberSectionHomeBlock } from '@/blocks/NumberSectionHome/Component.client'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
+  bannerImage: BannerImageBlock,
+  numberSectionHome: NumberSectionHomeBlock,
   content: ContentBlock,
   cta: CallToActionBlock,
   formBlock: FormBlock,
@@ -34,8 +38,7 @@ export const RenderBlocks: React.FC<{
 
             if (Block) {
               return (
-                <div className="my-16" key={index}>
-                  {/* @ts-expect-error there may be some mismatch between the expected types here */}
+                <div  key={index}>
                   <Block {...block} disableInnerContainer />
                 </div>
               )

@@ -13,7 +13,7 @@ if (!i18n.isInitialized) {
     .init({
       fallbackLng: 'pt',
       supportedLngs: ['pt', 'en', 'es', 'ar'],
-      ns: ['header', 'footer', 'common'],
+      ns: ['header', 'footer', 'common', 'numberSectionHome'],
       defaultNS: 'common',
       backend: {
         // configure via env; TMS CDN recommended (Locize example)
